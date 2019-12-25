@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Test
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: -moz-none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            background-color: aqua;
+            font-size: 35px;
+            border-radius: 50%;
+        }
+
+        .attempted {
+            vertical-align: middle;
+            background-color: rgb(209, 193, 53);
+            font-size: 35px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .mdl-navigation table {
+            width: 100%;
+        }
+
+        .mdl-navigation tr {
+            margin: 20px;
+        }
+
+        .mdl-navigation td {
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            padding: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Title</span>
+            <nav class="mdl-navigation">
+                <table id="questions_navigator"></table>
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <h1 id="contentView">Content</h1>
+            </div>
+        </main>
+    </div>
+
+
+    <script>
+
+        var pos = 0;
+        var attempts = {};
+        var contentView = document.getElementById('contentView');
+
+        function goToQuestionNo(ele) {
+            
+            updateNavigatorState();
+
+        }
+
+        window.onload = function(){
+            createNavigator(50);
+        }
+
+        function createNavigator(size) {
+
+            var table = document.getElementById('questions_navigator');
+        
+
+            var navigation_data = '<tr>';
+
+            for(var i = 1; i<=size; i++) {
+                var td =`<td onclick="goToQuestionNo(this)" class="avatar">${i}</td>`;
+                navigation_data += td;
+
+                if(i<size && i%3===0) {
+                    navigation_data += '</tr><tr>';
+                }
+
+                if(i===size){
+                    navigation_data+='</tr>';
+                }
+
+                table.innerHTML = navigation_data;
+            }
+
+        }
+
+        function updateNavigatorState(){
+            if()
+        }
+
+    </script>
+</body>
+
+</html>

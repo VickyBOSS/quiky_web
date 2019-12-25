@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Test</title>
+</head>
+<style>
+    body{
+        background-color: rgb(141, 215, 245);
+    }
+
+    .box1 a{
+        text-decoration: none;
+        color: #000;
+        font-family: serif;
+        font-weight: bold;
+        display: block;
+    }
+
+    .container{
+
+        display: flex;
+        flex-direction: row;
+        height: 80vh;
+    }
+
+    .container div{
+        border: 1px solid black;
+    }
+
+    .box1{
+        flex: 1;
+    }
+
+    .box2{
+        flex: 3;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+
+
+
+</style>
+<body>
+
+    <div class="container">
+            <div class="box1">
+                <a href="#">Home</a>
+                <a href="#">Add Topic</a>
+                <a href="#">Add Questions</a>
+                <a href="#">Prepare Test</a>
+                <a href="#">Publish Test</a>
+            </div>
+            <div class="box2">
+                <p>Add New Topic</p>
+                <label>Topic
+                <input type="text" name="topic" id="topic">
+            </label>
+                <input type="submit" name="submit" id="submit"> 
+            </div>
+    </div>
+
+    
+</body>
+</html>

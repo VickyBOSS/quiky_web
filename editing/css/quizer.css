@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Kruti Dev';
+    src: url('../fonts/kruti_dev.TTF') format('truetype')
+}
+
+body {
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: aquamarine;
+}
+
+#quiz_container {
+    font-size: 18px;
+    width: 97%;
+    margin: 30px auto;
+    background-color: white;
+    padding: 10px;
+}
+
+#quiz_container #question {
+    font-weight: bold;
+}
+
+#quiz_container label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+#options_container {
+    margin: 30px;
+}
+
+#navigation_buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#navigation_buttons button {
+    width: 100%;
+    margin: 10px;
+    font-size: 20px;
+}
+
+#btnSubmit {
+    display: block;
+    width: 98%;
+    margin: 10px auto;
+    font-size: 22px;
+}
+
+.review-mark-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+.review-mark-div label {
+    align-items: center;
+    font-size: 18px;
+}
+
+/* Navigator Style */
+
+.unattempted {
+    vertical-align: middle;
+    background-color: rgb(184, 196, 196);
+    font-size: 35px;
+    border-radius: 10%;
+}
+
+.attempted {
+    vertical-align: middle;
+    background-color: rgb(89, 250, 103);
+    color: white;
+    font-size: 35px;
+    border-radius: 50%;
+}
+
+.review {
+    vertical-align: middle;
+    background-color: rgb(255, 79, 56);
+    font-size: 35px;
+    border-radius: 50% 50% 0 0;
+}
+
+.mdl-navigation table {
+    width: 100%;
+}
+
+.mdl-navigation tr {
+    margin: 20px;
+}
+
+.mdl-navigation td {
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    padding: 15px;
+    cursor: pointer;
+}

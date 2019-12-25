@@ -1,0 +1,38 @@
+#progressbar {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh;
+    background: rgb(185, 255, 189) 
+    url('../images/spinner.gif')
+    no-repeat
+    center;
+    
+}
+
+#tests_table {
+    width: 100%;
+    height: 100vh;
+}
+
+#tests_table td {
+    border-bottom: 1px solid black;
+}
+
+#tests_table .testsList_Title {
+    font-size: 20px;
+    color: black;
+}
+
+#tests_table .testsList_Time  {
+    float: right;
+}
+
+#tests_table .testsList_NoOfQuestions  {
+    display: block;
+}
+
+#tests_table .testsList_Duration  {
+    /* display: inline;
+    padding-left: 20px; */
+}

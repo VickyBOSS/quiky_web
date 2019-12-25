@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizer</title>
+
+    <style>
+        body {
+            display: flex;
+            color: #f39c12;
+            flex-direction: column;
+            /* justify-content: center;
+    align-items: center; */
+            width: 96%;
+            height: 100vh;
+        }
+
+        h1 {
+            margin: 0 0 0.25em;
+        }
+
+        /* Reset Select */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #2c3e50;
+            background-image: none;
+        }
+
+        /* Remove IE arrow */
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select */
+        .select {
+            position: relative;
+            margin-top: 10px;
+            padding-left: 10px;
+            display: flex;
+            height: 3em;
+            line-height: 3;
+            background: #2c3e50;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+
+        select {
+            flex: 1;
+            padding: 0 .5em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Arrow */
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: #34495e;
+            cursor: pointer;
+            pointer-events: none;
+            -webkit-transition: .25s all ease;
+            -o-transition: .25s all ease;
+            transition: .25s all ease;
+        }
+
+        /* Transition */
+        .select:hover::after {
+            color: #f39c12;
+        }
+
+        .full {
+            width: 100%;
+            margin-right: 10px;
+            margin-left: 10px;
+            min-height: 30px;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="form_block">
+
+
+        <div class="full select">
+            Topic : <select id="topicsView" class="form-control"></select>
+        </div>
+        <br>
+        <div class="full select">
+            Topic : <select id="subTopicsView" class="form-control"></select>
+        </div>
+        <br>
+
+        <div class="full">
+            <label class="full">Question
+                <input class="full" type="text" id="question_field">
+            </label>
+        </div>
+        <br>
+        <div class="full">
+            <label class="full">Option 1 <input type="radio" name='answer' value="op1">
+                <input class="full type=" text" id="op1_field">
+            </label>
+        </div>
+        <div class="full">
+            <label class="full">Option 2 <input type="radio" name='answer' value="op2">
+                <input class="full type=" text" id="op2_field">
+            </label>
+        </div>
+        <div class="full">
+            <label class="full">Option 3 <input type="radio" name='answer' value="op3">
+                <input class="full type=" text" id="op3_field">
+            </label>
+        </div>
+        <div class="full">
+            <label class="full">Option 4
+                <input type="radio" name='answer' value="op4">
+                <input class="full type=" text" id="op4_field">
+            </label>
+        </div>
+
+        <br><br>
+
+        <button onclick="saveData(question_field,op1_field,op2_field,op3_field,op4_field)"
+            class="full">
+            Save
+        </button><br><br>
+        <button onclick="clearData(question_field,op1_field,op2_field,op3_field,op4_field)"
+            class="full">
+            Clear
+        </button>
+
+    </div>
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-app.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.4/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAeJ3-UbIHowtV3wTheqm7J9gu20sITBrY",
+            authDomain: "quiky-app.firebaseapp.com",
+            databaseURL: "https://quiky-app.firebaseio.com",
+            projectId: "quiky-app",
+            storageBucket: "quiky-app.appspot.com",
+            messagingSenderId: "19161994152",
+            appId: "1:19161994152:web:316a47b135ee9e58"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+<script src="js/add_question.js"></script>
+
+
+
+
+</body>
+
+</html>

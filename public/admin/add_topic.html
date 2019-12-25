@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body {
+            display: flex;
+            color: #f39c12;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .full {
+            width: 100%;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        /* Reset Select */
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            appearance: none;
+            outline: 0;
+            box-shadow: none;
+            border: 0 !important;
+            background: #2c3e50;
+            background-image: none;
+        }
+
+        /* Remove IE arrow */
+        select::-ms-expand {
+            display: none;
+        }
+
+        /* Custom Select */
+        .select {
+            position: relative;
+            margin-top: 10px;
+            padding-left: 10px;
+            display: flex;
+            height: 3em;
+            line-height: 3;
+            background: #2c3e50;
+            overflow: hidden;
+            border-radius: .25em;
+        }
+
+        select {
+            flex: 1;
+            padding: 0 .5em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Arrow */
+        .select::after {
+            content: '\25BC';
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0 1em;
+            background: #34495e;
+            cursor: pointer;
+            pointer-events: none;
+            -webkit-transition: .25s all ease;
+            -o-transition: .25s all ease;
+            transition: .25s all ease;
+        }
+
+        /* Transition */
+        .select:hover::after {
+            color: #f39c12;
+        }
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAeJ3-UbIHowtV3wTheqm7J9gu20sITBrY",
+            authDomain: "quiky-app.firebaseapp.com",
+            databaseURL: "https://quiky-app.firebaseio.com",
+            projectId: "quiky-app",
+            storageBucket: "quiky-app.appspot.com",
+            messagingSenderId: "19161994152",
+            appId: "1:19161994152:web:316a47b135ee9e58"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <div>
+        <div style="display: block" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label full">
+            <input class="mdl-textfield__input full" type="text" id="topic_field">
+            <label class="mdl-textfield__label full" for="topic_field">Topic</label>
+        </div>
+
+        <button onclick="saveTopic(topic_field)">Save Topic</button>
+    </div>
+    <br><br>
+    <hr><br><br>
+
+    <div>
+        <div class="full select">
+            Topic : <select id="topicsView" class="form-control"></select>
+        </div>
+        <br>
+        <br>
+        <div class="full mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="full mdl-textfield__input" type="text" id="subtopic_field">
+            <label class="full mdl-textfield__label" for="subtopic_field">Sub Topic</label>
+        </div>
+        <br>
+
+        <button onclick="saveSubTopic(subtopic_field)">Save Topic</button>
+
+
+    </div>
+
+    <script src="js/add_topic.js"></script>
+</body>
+
+</html>

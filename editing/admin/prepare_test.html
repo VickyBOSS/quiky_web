@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prepare Test</title>
+</head>
+
+<body>
+
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-firestore.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+             https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyAeJ3-UbIHowtV3wTheqm7J9gu20sITBrY",
+            authDomain: "quiky-app.firebaseapp.com",
+            databaseURL: "https://quiky-app.firebaseio.com",
+            projectId: "quiky-app",
+            storageBucket: "quiky-app.appspot.com",
+            messagingSenderId: "19161994152",
+            appId: "1:19161994152:web:316a47b135ee9e58"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <link rel="stylesheet" href="css/prepare_test.css" />
+
+
+    <!-- Left Container  -->
+    <div class='left'>
+        <div class="quiz-properties-container">
+            <div class="select" style="min-width: 35%">
+                Title - <select id="testTitle" class="form-control">
+                    <option>Rajasthan GK</option>
+                    <option>Hindi</option>
+                    <option>Computer</option>
+                    <option>Math</option>
+                </select>
+            </div>
+
+            <div class="select" style="min-width: 28%">
+                No of Q. : <select id="selectNoOfQuestions" class="form-control">
+                    <option>10</option>
+                    <option>20</option>
+                    <option>50</option>
+                    <option>80</option>
+                    <option>100</option>
+                    <option>120</option>
+                    <option>150</option>
+                    <option>200</option>
+                </select>
+            </div>
+
+
+            <div class="select" style="min-width: 22%">
+                Time : <select id="selectTime" class="form-control">
+                    <option>5</option>
+                    <option>10</option>
+                    <option>30</option>
+                    <option>45</option>
+                    <option>60</option>
+                    <option>75</option>
+                    <option>90</option>
+                    <option>120</option>
+                </select> </div>
+
+        </div>
+
+        <div>
+            <table id="test_questions_table"></table>
+        </div><br><br>
+        <div class='center'>
+            <button style="width: 95%" onclick="saveDraft()" id="saveDraftBtn">Save Draft</button>
+        </div>
+        <br>
+    </div>
+
+    <!-- Right Container  -->
+    <div class='right'>
+        <div style="color: darkorange">
+            <div class="full select">
+                Topic : <select id="topicsView" class="form-control"></select>
+            </div>
+            <div class="full select">
+                Topic : <select id="subTopicsView" class="form-control"></select>
+            </div>
+            <br>
+        </div>
+        <div style="overflow-y: scroll; height: 80vh;">
+            <table id="questions_table"></table>
+        </div>
+    </div>
+
+    <script src="js/prepare_test.js"></script>
+</body>
+
+</html>
